@@ -1,0 +1,23 @@
+public class ZerosToEnd {
+    public static void main(String[] args) {
+        int number = 1022040100;
+        String numberStr = Integer.toString(number);
+        //Here to build the seperate the zeros int this
+        StringBuilder nonZeroPart = new StringBuilder();
+        StringBuilder zerosPart = new StringBuilder();
+        for (char c : numberStr.toCharArray()) {
+            if (c == '0') {
+                zerosPart.append(c);
+            } else {
+                nonZeroPart.append(c);
+            }
+        }
+        
+        String resultStr = nonZeroPart.append(zerosPart).toString();
+        int result = Integer.parseInt(resultStr); 
+        System.out.println("Original number: " + number);
+        System.out.println("Modified number: " + result);
+    }
+}
+
+ (Note):_ If you want the result as an integer
